@@ -1,5 +1,6 @@
 ﻿namespace Domain.ValueObject.Exceptions
 {
+    // Исключение для недопустимых операций
     public class DomainOperationException : InvalidOperationException
     {
         public DomainOperationException(string message) : base(message) { }
