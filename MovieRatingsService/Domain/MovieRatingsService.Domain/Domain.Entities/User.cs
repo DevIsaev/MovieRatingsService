@@ -1,9 +1,10 @@
 ﻿using Domain.ValueObject;
 using Domain.ValueObject.Exceptions;
 
-namespace MovieRatingsService.Domain.Domain.Entities
-{
-    // Пользователь. Может оценивать фильмы и писать рецензии.
+
+namespace MovieRatingsService.Domain.Domain.Entities { 
+
+// Пользователь.Может оценивать фильмы и писать рецензии.
     public class User
     {
         public Guid Id { get; private set; }

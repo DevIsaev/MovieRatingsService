@@ -1,6 +1,7 @@
 ﻿using Domain.ValueObject;
 using Domain.ValueObject.Exceptions;
 
+
 namespace MovieRatingsService.Domain.Domain.Entities
 {
     // Фильм в каталоге.
