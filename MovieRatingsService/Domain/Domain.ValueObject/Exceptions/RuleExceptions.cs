@@ -45,4 +45,11 @@
     {
         public EntityNotFoundException(string entityName, object id) : base($"{entityName} с идентификатором {id} не найден.") { }
     }
+
+    // Попытка удалить фильм, у которого есть оценки или рецензии.
+    public class MovieHasDependenciesException : DomainOperationException
+    {
+        public MovieHasDependenciesException(Guid movieId)
+            : base($"Невозможно удалить фильм {movieId}, так как у него есть оценки или рецензии.") { }
+    }
 }
