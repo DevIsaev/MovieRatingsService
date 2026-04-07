@@ -1,12 +1,12 @@
 ﻿using Domain.ValueObject;
 using Domain.ValueObject.Exceptions;
+using MovieRatingsService.Domain.Base;
 
 namespace MovieRatingsService.Domain.Domain.Entities
 {
     // Оценка фильма пользователем.
-    public class Rating
+    public class Rating : Entity<Guid>
     {
-        public Guid Id { get; private set; }
         public User User { get; private set; }
         public Movie Movie { get; private set; }
         public Score Score { get; private set; }
@@ -15,9 +15,8 @@ namespace MovieRatingsService.Domain.Domain.Entities
         public DateTime? DeletedAt { get; private set; }
         public Admin? DeletedByAdmin { get; private set; }
 
-        public Rating(User user, Movie movie, Score score)
+        public Rating(User user, Movie movie, Score score):base(Guid.NewGuid())
         {
-            Id = Guid.NewGuid();
             User = user ?? throw new DomainArgumentNullException(nameof(user));
             Movie = movie ?? throw new DomainArgumentNullException(nameof(movie));
             Score = score ?? throw new DomainArgumentNullException(nameof(score));

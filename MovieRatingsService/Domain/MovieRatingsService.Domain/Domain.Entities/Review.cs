@@ -1,13 +1,13 @@
 ﻿using Domain.ValueObject;
 using Domain.ValueObject.Exceptions;
+using MovieRatingsService.Domain.Base;
 using MovieRatingsService.Domain.Domain.Enums;
 
 namespace MovieRatingsService.Domain.Domain.Entities
 {
     // Рецензия пользователя на фильм.
-    public class Review
+    public class Review : Entity<Guid>
     {
-        public Guid Id { get; private set; }
         public User User { get; private set; }
         public Movie Movie { get; private set; }
         public ReviewContent Content { get; private set; }
@@ -17,9 +17,8 @@ namespace MovieRatingsService.Domain.Domain.Entities
         public Admin? HiddenByAdmin { get; private set; }
         public DateTime? HiddenAt { get; private set; }
 
-        public Review(User user, Movie movie, ReviewContent content)
+        public Review(User user, Movie movie, ReviewContent content):base(Guid.NewGuid())
         {
-            Id = Guid.NewGuid();
             User = user ?? throw new DomainArgumentNullException(nameof(user));
             Movie = movie ?? throw new DomainArgumentNullException(nameof(movie));
             Content = content ?? throw new DomainArgumentNullException(nameof(content));

@@ -1,13 +1,13 @@
 ﻿using Domain.ValueObject;
 using Domain.ValueObject.Exceptions;
+using MovieRatingsService.Domain.Base;
 
 
 namespace MovieRatingsService.Domain.Domain.Entities
 {
     // Фильм в каталоге.
-    public class Movie
+    public class Movie : Entity<Guid>
     {
-        public Guid Id { get; private set; }
         public Title Title { get; private set; }
         public string? Description { get; private set; }
         public int? ReleaseYear { get; private set; }
@@ -18,9 +18,8 @@ namespace MovieRatingsService.Domain.Domain.Entities
         public bool IsDeleted { get; private set; }
 
         public Movie(Title title, Admin createdByAdmin, string? description = null,
-                     int? releaseYear = null, string? genre = null, string? posterUrl = null)
+                     int? releaseYear = null, string? genre = null, string? posterUrl = null):base(Guid.NewGuid())
         {
-            Id = Guid.NewGuid();
             Title = title ?? throw new DomainArgumentNullException(nameof(title));
             CreatedByAdmin = createdByAdmin ?? throw new DomainArgumentNullException(nameof(createdByAdmin));
             CreatedAt = DateTime.UtcNow;

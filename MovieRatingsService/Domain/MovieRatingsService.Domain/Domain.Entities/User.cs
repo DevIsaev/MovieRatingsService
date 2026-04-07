@@ -1,16 +1,17 @@
 ﻿using Domain.ValueObject;
 using Domain.ValueObject.Exceptions;
+using MovieRatingsService.Domain.Base;
 
 
 namespace MovieRatingsService.Domain.Domain.Entities { 
 
 // Пользователь.Может оценивать фильмы и писать рецензии.
-    public class User
+    public class User : Entity<Guid>
     {
         public Guid Id { get; private set; }
         public Username Username { get; private set; }
 
-        public User(Username username)
+        public User(Username username):base(Guid.NewGuid())
         {
             Id = Guid.NewGuid();
             Username = username ?? throw new DomainArgumentNullException(nameof(username));

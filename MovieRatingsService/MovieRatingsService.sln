@@ -5,9 +5,9 @@ VisualStudioVersion = 17.10.35013.160
 MinimumVisualStudioVersion = 10.0.40219.1
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Domain", "Domain", "{07EB493D-AE59-4587-87AB-90A788AB0B46}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "MovieRatingsService.Domain", "Domain\MovieRatingsService.Domain\MovieRatingsService.Domain.csproj", "{26B0A50D-F123-4354-9E30-33DB1B85A83B}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "MovieRatingsService.Domain", "Domain\MovieRatingsService.Domain\MovieRatingsService.Domain.csproj", "{26B0A50D-F123-4354-9E30-33DB1B85A83B}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Domain.ValueObject", "Domain\Domain.ValueObject\Domain.ValueObject.csproj", "{E41EA84E-1548-405D-B3AB-C40B9C72B6D6}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Domain.ValueObject", "Domain\Domain.ValueObject\Domain.ValueObject.csproj", "{E41EA84E-1548-405D-B3AB-C40B9C72B6D6}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution

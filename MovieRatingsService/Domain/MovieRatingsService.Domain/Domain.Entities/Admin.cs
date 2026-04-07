@@ -1,19 +1,18 @@
 ﻿using Domain.ValueObject;
 using Domain.ValueObject.Exceptions;
+using MovieRatingsService.Domain.Base;
 
 namespace MovieRatingsService.Domain.Domain.Entities
 {
     // Администратор системы. Управляет фильмами и модерирует контент.
-    public class Admin
+    public class Admin : Entity<Guid>
     {
-        public Guid Id { get; private set; }
         public Username Username { get; private set; }
         public PasswordHash PasswordHash { get; private set; }
         public Permissions Permissions { get; private set; }
 
-        public Admin(Username username, PasswordHash passwordHash, Permissions permissions)
+        public Admin(Username username, PasswordHash passwordHash, Permissions permissions):base(Guid.NewGuid())
         {
-            Id = Guid.NewGuid();
             Username = username ?? throw new DomainArgumentNullException(nameof(username));
             PasswordHash = passwordHash ?? throw new DomainArgumentNullException(nameof(passwordHash));
             Permissions = permissions ?? throw new DomainArgumentNullException(nameof(permissions));
