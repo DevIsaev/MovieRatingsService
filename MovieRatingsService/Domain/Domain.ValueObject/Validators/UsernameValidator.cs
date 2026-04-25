@@ -7,13 +7,16 @@ namespace Domain.ValueObject.Validators
     public class UsernameValidator : IValidator<string>
     {
         public static int MaxLength => 50;
+        public static int MinLength => 2;
 
         public void Validate(string value)
         {
             if (string.IsNullOrWhiteSpace(value))
-                throw new ValueNullException(nameof(value));
+                throw new ValueNullException(nameof(Username));
+            if (value.Length < MinLength)
+                throw new ValueTooShortException(nameof(Username), value.Length, MinLength);
             if (value.Length > MaxLength)
-                throw new ValueTooLongException(nameof(value), value.Length, MaxLength);
+                throw new ValueTooLongException(nameof(Username), value.Length, MaxLength);
         }
     }
 }

@@ -5,27 +5,29 @@ using MovieRatingsService.Domain.Base;
 
 namespace MovieRatingsService.Domain.Domain.Entities { 
 
-// Пользователь.Может оценивать фильмы и писать рецензии.
+// Пользователь. Может оценивать фильмы и писать рецензии
     public class User : Entity<Guid>
     {
-        public Guid Id { get; private set; }
         public Username Username { get; private set; }
+        protected User() : base() { Username = null!; }
 
-        public User(Username username):base(Guid.NewGuid())
+        public User(Username username) : base(Guid.NewGuid())
         {
-            Id = Guid.NewGuid();
             Username = username ?? throw new DomainArgumentNullException(nameof(username));
         }
 
-        public void UpdateUsername(Username newUsername)
+        public bool UpdateUsername(Username newUsername)
         {
-            Username = newUsername ?? throw new DomainArgumentNullException(nameof(newUsername));
+            if (newUsername is null) throw new DomainArgumentNullException(nameof(newUsername));
+            if (Username == newUsername) return false;
+            Username = newUsername;
+            return true;
         }
 
         public override string ToString() => $"{Username.Value} (ID: {Id})";
 
         // Коллекции для навигации
-        public virtual ICollection<Rating> Ratings { get; private set; } = new List<Rating>();
-        public virtual ICollection<Review> Reviews { get; private set; } = new List<Review>();
+        private ICollection<Rating> Ratings = new List<Rating>();
+        private ICollection<Review> Reviews = new List<Review>();
     }
 }

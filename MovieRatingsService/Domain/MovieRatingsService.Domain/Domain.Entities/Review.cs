@@ -17,7 +17,7 @@ namespace MovieRatingsService.Domain.Domain.Entities
         public Admin? HiddenByAdmin { get; private set; }
         public DateTime? HiddenAt { get; private set; }
 
-        public Review(User user, Movie movie, ReviewContent content):base(Guid.NewGuid())
+        public Review(User user, Movie movie, ReviewContent content) : base(Guid.NewGuid())
         {
             User = user ?? throw new DomainArgumentNullException(nameof(user));
             Movie = movie ?? throw new DomainArgumentNullException(nameof(movie));
@@ -27,7 +27,8 @@ namespace MovieRatingsService.Domain.Domain.Entities
 
         public bool IsActive => Status == ReviewStatus.Active;
 
-        public override string ToString() => $"Отзыв от {User.Username.Value} на фильм {Movie.Title.Value} ({Content.Value[..Math.Min(20, Content.Value.Length)]}...)";
+        public override string ToString() =>
+            $"Отзыв от {User.Username.Value} на фильм \"{Movie.Title.Value}\" ({Content.Value[..Math.Min(20, Content.Value.Length)]}...)";
 
         public void UpdateContent(ReviewContent newContent)
         {
@@ -38,7 +39,7 @@ namespace MovieRatingsService.Domain.Domain.Entities
         public void Hide(Admin admin)
         {
             if (Status == ReviewStatus.Hidden)
-                throw new ReviewAlreadyHiddenException(Id);
+                throw new ReviewAlreadyHiddenException(this);
             Status = ReviewStatus.Hidden;
             HiddenByAdmin = admin ?? throw new DomainArgumentNullException(nameof(admin));
             HiddenAt = DateTime.UtcNow;
@@ -47,7 +48,7 @@ namespace MovieRatingsService.Domain.Domain.Entities
         public void Unhide()
         {
             if (Status != ReviewStatus.Hidden)
-                throw new DomainOperationException("Рецензия не скрыта.");
+                throw new ReviewNotHiddenException(this);
             Status = ReviewStatus.Active;
             HiddenByAdmin = null;
             HiddenAt = null;

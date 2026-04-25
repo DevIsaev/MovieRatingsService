@@ -4,7 +4,7 @@ using MovieRatingsService.Domain.Base;
 
 namespace MovieRatingsService.Domain.Domain.Entities
 {
-    // Оценка фильма пользователем.
+    // Оценка фильма пользователем
     public class Rating : Entity<Guid>
     {
         public User User { get; private set; }
@@ -15,7 +15,9 @@ namespace MovieRatingsService.Domain.Domain.Entities
         public DateTime? DeletedAt { get; private set; }
         public Admin? DeletedByAdmin { get; private set; }
 
-        public Rating(User user, Movie movie, Score score):base(Guid.NewGuid())
+        protected Rating() : base() { User = null!; Movie = null!; Score = null!; }
+
+        public Rating(User user, Movie movie, Score score) : base(Guid.NewGuid())
         {
             User = user ?? throw new DomainArgumentNullException(nameof(user));
             Movie = movie ?? throw new DomainArgumentNullException(nameof(movie));
@@ -25,7 +27,8 @@ namespace MovieRatingsService.Domain.Domain.Entities
 
         public bool IsActive => !DeletedAt.HasValue;
 
-        public override string ToString() => $"Рейтинг {Score.Value} фильма {Movie.Title.Value} от {User.Username.Value}";
+        public override string ToString() =>
+            $"Рейтинг {Score.Value} фильма \"{Movie.Title.Value}\" от {User.Username.Value}";
 
         public void UpdateScore(Score newScore)
         {
@@ -35,10 +38,10 @@ namespace MovieRatingsService.Domain.Domain.Entities
 
         public void Delete(Admin admin)
         {
-            if (DeletedAt.HasValue)
-                throw new RatingAlreadyDeletedException(Id);
-            DeletedAt = DateTime.UtcNow;
+            if (!IsActive)
+                throw new RatingAlreadyDeletedException(this);
             DeletedByAdmin = admin ?? throw new DomainArgumentNullException(nameof(admin));
+            DeletedAt = DateTime.UtcNow;
         }
     }
 }

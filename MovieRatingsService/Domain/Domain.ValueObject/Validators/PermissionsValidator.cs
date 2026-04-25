@@ -9,7 +9,7 @@ namespace Domain.ValueObject.Validators
         public void Validate(string value)
         {
             if (string.IsNullOrWhiteSpace(value))
-                throw new ValueNullException(nameof(value));
+                throw new ValueNullException(nameof(Permissions));
         }
     }
 }
