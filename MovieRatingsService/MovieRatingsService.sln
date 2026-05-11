@@ -9,9 +9,11 @@ Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "MovieRatingsService.Domain"
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Domain.ValueObject", "Domain\Domain.ValueObject\Domain.ValueObject.csproj", "{E41EA84E-1548-405D-B3AB-C40B9C72B6D6}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "MovieRatingsService.Domain.Repositories.Abstractions", "Domain\MovieRatingsService.Domain.Repositories.Abstractions\MovieRatingsService.Domain.Repositories.Abstractions.csproj", "{B7CBD3D2-FE57-4E1A-8CBF-660C9970D398}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "MovieRatingsService.Domain.Repositories.Abstractions", "Domain\MovieRatingsService.Domain.Repositories.Abstractions\MovieRatingsService.Domain.Repositories.Abstractions.csproj", "{B7CBD3D2-FE57-4E1A-8CBF-660C9970D398}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "DomainApp", "Domain\DomainApp\DomainApp.csproj", "{9083672A-7CA8-4D62-9E4D-8EB2ED188485}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "DomainApp", "Domain\DomainApp\DomainApp.csproj", "{9083672A-7CA8-4D62-9E4D-8EB2ED188485}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Infrastructure", "Infrastructure", "{33B2F1A0-EC19-4561-925F-C8FD9ED6F83C}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution

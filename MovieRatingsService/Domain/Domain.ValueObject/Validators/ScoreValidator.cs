@@ -6,8 +6,8 @@ namespace Domain.ValueObject.Validators
     // Валидатор оценки: от 1 до 10
     public class ScoreValidator : IValidator<int>
     {
-        private const int Min = 1;
-        private const int Max = 10;
+        public const int Min = 1;
+        public const int Max = 10;
 
         public void Validate(int value)
         {
