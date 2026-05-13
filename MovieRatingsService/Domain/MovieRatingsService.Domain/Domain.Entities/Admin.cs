@@ -16,7 +16,11 @@ namespace MovieRatingsService.Domain.Domain.Entities
             Username = username ?? throw new DomainArgumentNullException(nameof(username));
             Permissions = permissions ?? throw new DomainArgumentNullException(nameof(permissions));
         }
-
+        protected Admin(Guid id, Username username, Permissions permissions) : base(id)
+        {
+            Username = username ?? throw new DomainArgumentNullException(nameof(username));
+            Permissions = permissions ?? throw new DomainArgumentNullException(nameof(permissions));
+        }
         public override string ToString() => $"{Username.Value} (Админ)";
 
         // Навигационные коллекции

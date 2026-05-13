@@ -12,9 +12,9 @@ namespace Domain.ValueObject.Validators
         public void Validate(int value)
         {
             if (value < Min)
-                throw new SmallScoreException(value);
+                throw new SmallScoreException(value,Min);
             if (value > Max)
-                throw new BigScoreException(value);
+                throw new BigScoreException(value, Max);
         }
     }
 }
