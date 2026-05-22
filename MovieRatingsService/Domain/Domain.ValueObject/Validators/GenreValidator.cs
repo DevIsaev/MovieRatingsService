@@ -6,8 +6,8 @@ namespace Domain.ValueObject.Validators
     // Валидатор жанра
     public class GenreValidator : IValidator<string>
     {
-        private const int MaxLength = 100;
-        private const int MinLength = 1;
+        public const int MaxLength = 100;
+        public const int MinLength = 1;
 
         public void Validate(string value)
         {

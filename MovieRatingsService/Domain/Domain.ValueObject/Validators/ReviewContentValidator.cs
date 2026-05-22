@@ -6,8 +6,8 @@ namespace Domain.ValueObject.Validators
     // Валидатор текста рецензии: не null и не больше 2000 символов 
     public class ReviewContentValidator : IValidator<string>
     {
-        private const int MaxLength = 2000;
-        private const int MinLength = 1;
+        public const int MaxLength = 2000;
+        public const int MinLength = 1;
 
         public void Validate(string value)
         {

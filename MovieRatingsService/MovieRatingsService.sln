@@ -9,9 +9,17 @@ Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "MovieRatingsService.Domain"
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Domain.ValueObject", "Domain\Domain.ValueObject\Domain.ValueObject.csproj", "{E41EA84E-1548-405D-B3AB-C40B9C72B6D6}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "MovieRatingsService.Domain.Repositories.Abstractions", "Domain\MovieRatingsService.Domain.Repositories.Abstractions\MovieRatingsService.Domain.Repositories.Abstractions.csproj", "{B7CBD3D2-FE57-4E1A-8CBF-660C9970D398}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "MovieRatingsService.Domain.Repositories.Abstractions", "Domain\MovieRatingsService.Domain.Repositories.Abstractions\MovieRatingsService.Domain.Repositories.Abstractions.csproj", "{B7CBD3D2-FE57-4E1A-8CBF-660C9970D398}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "DomainApp", "Domain\DomainApp\DomainApp.csproj", "{9083672A-7CA8-4D62-9E4D-8EB2ED188485}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "DomainApp", "Domain\DomainApp\DomainApp.csproj", "{9083672A-7CA8-4D62-9E4D-8EB2ED188485}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Infrastructure", "Infrastructure", "{33B2F1A0-EC19-4561-925F-C8FD9ED6F83C}"
+EndProject
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "MovieRatingsService.Infrastructure.EntityFramework", "Infrastructure\MovieRatingsService.Infrastructure.EntityFramework\MovieRatingsService.Infrastructure.EntityFramework.csproj", "{E55DCB30-BA06-4E4E-B134-DEF520363423}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Presentation", "Presentation", "{65BBAFDB-AFCD-4D86-9D4D-1C2D5E71D531}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "MovieRatingsService.WebHost", "Presentation\MovieRatingsService.WebHost\MovieRatingsService.WebHost.csproj", "{C9B88A4C-3D34-4B9B-862A-3BFBCB455ABD}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -35,6 +43,14 @@ Global
 		{9083672A-7CA8-4D62-9E4D-8EB2ED188485}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{9083672A-7CA8-4D62-9E4D-8EB2ED188485}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{9083672A-7CA8-4D62-9E4D-8EB2ED188485}.Release|Any CPU.Build.0 = Release|Any CPU
+		{E55DCB30-BA06-4E4E-B134-DEF520363423}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{E55DCB30-BA06-4E4E-B134-DEF520363423}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{E55DCB30-BA06-4E4E-B134-DEF520363423}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{E55DCB30-BA06-4E4E-B134-DEF520363423}.Release|Any CPU.Build.0 = Release|Any CPU
+		{C9B88A4C-3D34-4B9B-862A-3BFBCB455ABD}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{C9B88A4C-3D34-4B9B-862A-3BFBCB455ABD}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{C9B88A4C-3D34-4B9B-862A-3BFBCB455ABD}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{C9B88A4C-3D34-4B9B-862A-3BFBCB455ABD}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
@@ -44,6 +60,8 @@ Global
 		{E41EA84E-1548-405D-B3AB-C40B9C72B6D6} = {07EB493D-AE59-4587-87AB-90A788AB0B46}
 		{B7CBD3D2-FE57-4E1A-8CBF-660C9970D398} = {07EB493D-AE59-4587-87AB-90A788AB0B46}
 		{9083672A-7CA8-4D62-9E4D-8EB2ED188485} = {07EB493D-AE59-4587-87AB-90A788AB0B46}
+		{E55DCB30-BA06-4E4E-B134-DEF520363423} = {33B2F1A0-EC19-4561-925F-C8FD9ED6F83C}
+		{C9B88A4C-3D34-4B9B-862A-3BFBCB455ABD} = {65BBAFDB-AFCD-4D86-9D4D-1C2D5E71D531}
 	EndGlobalSection
 	GlobalSection(ExtensibilityGlobals) = postSolution
 		SolutionGuid = {01038DA1-8B6C-41E2-89BF-2CB016DD2659}

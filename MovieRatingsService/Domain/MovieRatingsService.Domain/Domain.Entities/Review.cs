@@ -17,6 +17,8 @@ namespace MovieRatingsService.Domain.Domain.Entities
         public Admin? HiddenByAdmin { get; private set; }
         public DateTime? HiddenAt { get; private set; }
 
+        protected Review() : base() { User = null!; Movie = null!; Content = null!; }
+
         public Review(User user, Movie movie, ReviewContent content) : base(Guid.NewGuid())
         {
             User = user ?? throw new DomainArgumentNullException(nameof(user));

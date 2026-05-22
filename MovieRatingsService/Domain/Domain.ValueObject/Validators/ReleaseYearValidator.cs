@@ -8,7 +8,7 @@ namespace Domain.ValueObject.Validators
     public class ReleaseYearValidator : IValidator<int>
     {
 
-        private const int MinYear = 1888;
+        public const int MinYear = 1888;
 
         public void Validate(int value)
         {

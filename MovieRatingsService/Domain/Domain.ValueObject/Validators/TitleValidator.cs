@@ -6,8 +6,8 @@ namespace Domain.ValueObject.Validators
     // Валидатор названия фильма: не null, не пустой, длина не больше 200
     public class TitleValidator : IValidator<string>
     {
-        private const int MaxLength = 200;
-        private const int MinLength = 1;
+        public const int MaxLength = 200;
+        public const int MinLength = 1;
 
         public void Validate(string value)
         {

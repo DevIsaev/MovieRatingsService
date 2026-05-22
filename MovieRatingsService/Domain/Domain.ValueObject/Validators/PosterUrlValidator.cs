@@ -6,7 +6,7 @@ namespace Domain.ValueObject.Validators
     // Валидатор Url ссылки на постер
     public class PosterUrlValidator : IValidator<string>
     {
-        private const int MaxLength = 500;
+        public const int MaxLength = 500;
 
         public void Validate(string value)
         {

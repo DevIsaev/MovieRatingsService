@@ -6,7 +6,7 @@ namespace Domain.ValueObject.Validators
     // Валидатор описания фильма
     public class DescriptionValidator : IValidator<string?>
     {
-        private const int MaxLength = 1000;
+        public const int MaxLength = 1000;
 
         public void Validate(string? value)
         {
