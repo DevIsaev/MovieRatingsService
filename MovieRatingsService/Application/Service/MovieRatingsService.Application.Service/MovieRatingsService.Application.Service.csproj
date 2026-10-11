@@ -1,0 +1,23 @@
+﻿<Project Sdk="Microsoft.NET.Sdk">
+
+  <PropertyGroup>
+    <TargetFramework>net8.0</TargetFramework>
+    <ImplicitUsings>enable</ImplicitUsings>
+    <Nullable>enable</Nullable>
+  </PropertyGroup>
+
+  <ItemGroup>
+    <PackageReference Include="AutoMapper" Version="16.2.0" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <ProjectReference Include="..\..\..\Domain\Domain.ValueObject\Domain.ValueObject.csproj" />
+    <ProjectReference Include="..\..\..\Domain\DomainApp\DomainApp.csproj" />
+    <ProjectReference Include="..\..\..\Domain\MovieRatingsService.Domain.Repositories.Abstractions\MovieRatingsService.Domain.Repositories.Abstractions.csproj" />
+    <ProjectReference Include="..\..\..\Domain\MovieRatingsService.Domain\MovieRatingsService.Domain.csproj" />
+    <ProjectReference Include="..\..\..\Infrastructure\MovieRatingsService.Infrastructure.EntityFramework\MovieRatingsService.Infrastructure.EntityFramework.csproj" />
+    <ProjectReference Include="..\..\..\Presentation\MovieRatingsService.WebHost\MovieRatingsService.WebHost.csproj" />
+    <ProjectReference Include="..\..\Models\MovieRatingsService.Application.Models\MovieRatingsService.Application.Models.csproj" />
+  </ItemGroup>
+
+</Project>
