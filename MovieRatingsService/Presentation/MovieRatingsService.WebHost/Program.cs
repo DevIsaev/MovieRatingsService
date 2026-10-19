@@ -1,8 +1,16 @@
-
-using Microsoft.EntityFrameworkCore;
+using FluentValidation;
+using FluentValidation.AspNetCore;
 using Microsoft.OpenApi.Models;
+using MovieRatingsService.Application.Service;
+using MovieRatingsService.Application.Service.Abstractions;
+using MovieRatingsService.Application.Service.Mapping;
+using MovieRatingsService.Domain.Repositories.Abstractions;
 using MovieRatingsService.Infrastructure.EntityFramework;
+using MovieRatingsService.Infrastructure.EntityFramework.RepositoriesEF;
+using MovieRatingsService.Infrastructure.RepositoriesEF;
+using MovieRatingsService.WebHost.Filters;
 using MovieRatingsService.WebHost.Helpers;
+using MovieRatingsService.WebHost.Mapping;
 
 namespace MovieRatingsService.WebHost
 {
@@ -13,55 +21,49 @@ namespace MovieRatingsService.WebHost
             var builder = WebApplication.CreateBuilder(args);
 
             var connectionString = builder.Configuration.GetConnectionString(nameof(ApplicationDbContext));
-
             if (string.IsNullOrEmpty(connectionString))
-            {
-                throw new InvalidOperationException("Connection string for NotesServiceDbContext is not configured.");
-            }
+                throw new InvalidOperationException("Connection string for ApplicationDbContext is not configured.");
+
 
             builder.Services.AddNpgsql<ApplicationDbContext>(connectionString, options =>
             {
                 options.MigrationsAssembly("MovieRatingsService.Infrastructure.EntityFramework");
-
             });
 
-            builder.Services.AddSwaggerGen(
-                c =>
+            builder.Services.AddSwaggerGen(c =>
+            {
+                c.SwaggerDoc("v1", new OpenApiInfo
                 {
-                    c.SwaggerDoc("v1", new OpenApiInfo
-                    {
-                        Version = "v1",
-                        Title = "Movies service API",
-                        Description = ""
-                    });
+                    Version = "v1",
+                    Title = "Movie ratings service API",
+                    Description = "API for movies, ratings and reviews."
                 });
+            });
 
-            builder.Services.AddDbContext<ApplicationDbContext>(
-                options =>
-                {
-                    options.UseNpgsql(connectionString);
-                });
+            builder.Services.AddAutoMapper(cfg =>
+            {
+                cfg.AddProfile<ApplicationProfile>();
+                cfg.AddProfile<PresentationProfile>();
+            });
 
-            builder.Services.AddControllers();
-            // Learn more about configuring Swagger/OpenAPI at https://aka.ms/aspnetcore/swashbuckle
+            builder.Services.AddScoped<IUserRepository, EfUserRepository>();
+            builder.Services.AddScoped<IUsersApplicationService, UsersApplicationService>();
+
+            builder.Services.AddValidatorsFromAssemblyContaining<Program>();
+            builder.Services.AddFluentValidationAutoValidation();
+
+            builder.Services.AddControllers(o => o.Filters.Add<ApiExceptionFilter>());
             builder.Services.AddEndpointsApiExplorer();
-            builder.Services.AddSwaggerGen();
-
 
             var app = builder.Build();
 
-            // Configure the HTTP request pipeline.
             if (app.Environment.IsDevelopment())
             {
                 app.UseSwagger();
                 app.UseSwaggerUI();
             }
 
-            //app.UseHttpsRedirection();
-
             app.UseAuthorization();
-
-
             app.MapControllers();
 
             app.MigrateDatabase<ApplicationDbContext>();

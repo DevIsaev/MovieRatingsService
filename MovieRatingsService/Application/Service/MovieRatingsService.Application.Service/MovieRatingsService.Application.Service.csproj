@@ -16,7 +16,6 @@
     <ProjectReference Include="..\..\..\Domain\MovieRatingsService.Domain.Repositories.Abstractions\MovieRatingsService.Domain.Repositories.Abstractions.csproj" />
     <ProjectReference Include="..\..\..\Domain\MovieRatingsService.Domain\MovieRatingsService.Domain.csproj" />
     <ProjectReference Include="..\..\..\Infrastructure\MovieRatingsService.Infrastructure.EntityFramework\MovieRatingsService.Infrastructure.EntityFramework.csproj" />
-    <ProjectReference Include="..\..\..\Presentation\MovieRatingsService.WebHost\MovieRatingsService.WebHost.csproj" />
     <ProjectReference Include="..\..\Models\MovieRatingsService.Application.Models\MovieRatingsService.Application.Models.csproj" />
   </ItemGroup>
 

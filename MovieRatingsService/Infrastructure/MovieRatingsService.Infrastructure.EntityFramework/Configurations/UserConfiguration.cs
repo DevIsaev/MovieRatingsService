@@ -23,6 +23,8 @@ namespace MovieRatingsService.Infrastructure.EntityFramework.Configuration
                     str => new Username(str))
                 .HasMaxLength(UsernameValidator.MaxLength);
 
+            builder.HasIndex(x => x.Username).IsUnique();
+
             // Связь с оценками
             builder.HasMany<Rating>("Ratings")
                 .WithOne(r => r.User)
