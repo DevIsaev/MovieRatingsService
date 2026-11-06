@@ -6,5 +6,5 @@ namespace MovieRatingsService.Domain.Repositories.Abstractions;
 public interface IUserRepository : IRepository<User, Guid>
 {
     // Имя пользователя уникально
-    Task<User?> GetByUsernameAsync(string username, CancellationToken cancellationToken);
+    Task<IEnumerable<User>> SearchByUsernameAsync(string username, CancellationToken cancellationToken);
 }

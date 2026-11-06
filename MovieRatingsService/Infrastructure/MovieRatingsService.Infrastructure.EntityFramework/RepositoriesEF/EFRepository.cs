@@ -1,5 +1,7 @@
-﻿using Microsoft.EntityFrameworkCore;
+﻿using Domain.ValueObject;
+using Microsoft.EntityFrameworkCore;
 using MovieRatingsService.Domain.Base;
+using MovieRatingsService.Domain.Domain.Entities;
 using MovieRatingsService.Domain.Repositories.Abstractions.Base;
 using MovieRatingsService.Infrastructure.EntityFramework;
 
