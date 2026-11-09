@@ -1,0 +1,75 @@
+Summary
+  Generated on: 03.11.2026 - 22:27:51
+  Coverage date: 03.11.2026 - 22:22:02
+  Parser: Cobertura
+  Assemblies: 2
+  Classes: 51
+  Files: 51
+  Line coverage: 99.2%
+  Covered lines: 399
+  Uncovered lines: 3
+  Coverable lines: 402
+  Total lines: 997
+  Branch coverage: 95.6% (178 of 186)
+  Covered branches: 178
+  Total branches: 186
+  Method coverage: 100% (142 of 142)
+  Full method coverage: 97.8% (139 of 142)
+  Covered methods: 142
+  Fully covered methods: 139
+  Total methods: 142
+
+Domain.ValueObject                                                    97.6%
+  Domain.ValueObject.Base.ValueObject<T>                               100%
+  Domain.ValueObject.Description                                       100%
+  Domain.ValueObject.Exceptions.BigScoreException                      100%
+  Domain.ValueObject.Exceptions.DomainArgumentNullException            100%
+  Domain.ValueObject.Exceptions.DomainArgumentOutOfRangeException      100%
+  Domain.ValueObject.Exceptions.DomainException                        100%
+  Domain.ValueObject.Exceptions.DomainOperationException               100%
+  Domain.ValueObject.Exceptions.EntityNotFoundException                100%
+  Domain.ValueObject.Exceptions.InvalidMovieDataException              100%
+  Domain.ValueObject.Exceptions.InvalidUrlException                    100%
+  Domain.ValueObject.Exceptions.SmallScoreException                    100%
+  Domain.ValueObject.Exceptions.UnauthorizedOperationException         100%
+  Domain.ValueObject.Exceptions.ValidatorNullException                 100%
+  Domain.ValueObject.Exceptions.ValueNullException                     100%
+  Domain.ValueObject.Exceptions.ValueTooBigException                   100%
+  Domain.ValueObject.Exceptions.ValueTooLongException                  100%
+  Domain.ValueObject.Exceptions.ValueTooShortException                 100%
+  Domain.ValueObject.Exceptions.ValueTooSmallException                 100%
+  Domain.ValueObject.Genre                                             100%
+  Domain.ValueObject.Permissions                                       100%
+  Domain.ValueObject.PosterUrl                                         100%
+  Domain.ValueObject.ReleaseYear                                       100%
+  Domain.ValueObject.ReviewContent                                     100%
+  Domain.ValueObject.Score                                             100%
+  Domain.ValueObject.Title                                             100%
+  Domain.ValueObject.Username                                          100%
+  Domain.ValueObject.Validators.DescriptionValidator                   100%
+  Domain.ValueObject.Validators.GenreValidator                        87.5%
+  Domain.ValueObject.Validators.PermissionsValidator                   100%
+  Domain.ValueObject.Validators.PosterUrlValidator                     100%
+  Domain.ValueObject.Validators.ReleaseYearValidator                   100%
+  Domain.ValueObject.Validators.ReviewContentValidator                87.5%
+  Domain.ValueObject.Validators.ScoreValidator                         100%
+  Domain.ValueObject.Validators.TitleValidator                        87.5%
+  Domain.ValueObject.Validators.UsernameValidator                      100%
+
+MovieRatingsService.Domain                                             100%
+  Domain.ValueObject.Exceptions.DuplicateMovieTitleException           100%
+  Domain.ValueObject.Exceptions.DuplicateRatingException               100%
+  Domain.ValueObject.Exceptions.DuplicateReviewException               100%
+  Domain.ValueObject.Exceptions.MovieAlreadyDeletedException           100%
+  Domain.ValueObject.Exceptions.MovieHasDependenciesException          100%
+  Domain.ValueObject.Exceptions.MovieNotOwnedByAdminException          100%
+  Domain.ValueObject.Exceptions.RatingAlreadyDeletedException          100%
+  Domain.ValueObject.Exceptions.RatingAlreadyInDeletedListException    100%
+  Domain.ValueObject.Exceptions.ReviewAlreadyHiddenException           100%
+  Domain.ValueObject.Exceptions.ReviewNotHiddenException               100%
+  MovieRatingsService.Domain.Base.Entity<T>                            100%
+  MovieRatingsService.Domain.Domain.Entities.Admin                     100%
+  MovieRatingsService.Domain.Domain.Entities.Movie                     100%
+  MovieRatingsService.Domain.Domain.Entities.Rating                    100%
+  MovieRatingsService.Domain.Domain.Entities.Review                    100%
+  MovieRatingsService.Domain.Domain.Entities.User                      100%

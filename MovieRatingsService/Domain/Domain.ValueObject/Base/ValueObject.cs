@@ -14,7 +14,7 @@ public class ValueObject<T>:IEquatable<ValueObject<T>>
         validator!.Validate(value);
         Value=value;
     }
-    public override string ToString()=>Value!.ToString()??GetType().ToString();
+    public override string ToString() => Value?.ToString() ?? GetType().ToString();
     public override bool Equals(object? obj)=>Equals(obj as ValueObject<T>);
     public bool Equals(ValueObject<T>? other)
     {
@@ -22,9 +22,9 @@ public class ValueObject<T>:IEquatable<ValueObject<T>>
         if (ReferenceEquals(this, other)) return true;
         if(GetType()!=other.GetType()) return false;
 
-        return other.Value!.Equals(Value);
+        return EqualityComparer<T>.Default.Equals(Value, other.Value);
     }
-    public override int GetHashCode() => Value!.GetHashCode();
+    public override int GetHashCode() => Value is null ? 0 : Value.GetHashCode();
     public static bool operator ==(ValueObject<T>? left, ValueObject<T>? right)
         => Equals(left, right);
     public static bool operator !=(ValueObject<T>? left, ValueObject<T>? right)

@@ -27,9 +27,11 @@ Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Models", "Models", "{618B94
 EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Service", "Service", "{F2B3B973-00DC-4457-8927-22A6E22AFF50}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "MovieRatingsService.Application.Models", "Application\Models\MovieRatingsService.Application.Models\MovieRatingsService.Application.Models.csproj", "{FF8C389F-39BA-43FF-A3A2-7DB3B7049732}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "MovieRatingsService.Application.Models", "Application\Models\MovieRatingsService.Application.Models\MovieRatingsService.Application.Models.csproj", "{FF8C389F-39BA-43FF-A3A2-7DB3B7049732}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "MovieRatingsService.Application.Service", "Application\Service\MovieRatingsService.Application.Service\MovieRatingsService.Application.Service.csproj", "{39AAE4AE-1F4C-4C32-B2D2-3C0A9C53991B}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "MovieRatingsService.Application.Service", "Application\Service\MovieRatingsService.Application.Service\MovieRatingsService.Application.Service.csproj", "{39AAE4AE-1F4C-4C32-B2D2-3C0A9C53991B}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "MovieRatingsService.Domain.Tests", "Domain\MovieRatingsService.Domain.Tests\MovieRatingsService.Domain.Tests.csproj", "{053E6570-CBEA-4328-B703-E14A8A738378}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -69,6 +71,10 @@ Global
 		{39AAE4AE-1F4C-4C32-B2D2-3C0A9C53991B}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{39AAE4AE-1F4C-4C32-B2D2-3C0A9C53991B}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{39AAE4AE-1F4C-4C32-B2D2-3C0A9C53991B}.Release|Any CPU.Build.0 = Release|Any CPU
+		{053E6570-CBEA-4328-B703-E14A8A738378}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{053E6570-CBEA-4328-B703-E14A8A738378}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{053E6570-CBEA-4328-B703-E14A8A738378}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{053E6570-CBEA-4328-B703-E14A8A738378}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
@@ -84,6 +90,7 @@ Global
 		{F2B3B973-00DC-4457-8927-22A6E22AFF50} = {B21C2D37-CAC4-4364-9DF2-21B56D017A12}
 		{FF8C389F-39BA-43FF-A3A2-7DB3B7049732} = {618B9468-F9AF-4D0B-B2B2-A8C5046CB865}
 		{39AAE4AE-1F4C-4C32-B2D2-3C0A9C53991B} = {F2B3B973-00DC-4457-8927-22A6E22AFF50}
+		{053E6570-CBEA-4328-B703-E14A8A738378} = {07EB493D-AE59-4587-87AB-90A788AB0B46}
 	EndGlobalSection
 	GlobalSection(ExtensibilityGlobals) = postSolution
 		SolutionGuid = {01038DA1-8B6C-41E2-89BF-2CB016DD2659}
