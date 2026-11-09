@@ -40,10 +40,12 @@ namespace MovieRatingsService.Domain.Domain.Entities
 
         public void Hide(Admin admin)
         {
+            if (admin is null)
+                throw new DomainArgumentNullException(nameof(admin));
             if (Status == ReviewStatus.Hidden)
                 throw new ReviewAlreadyHiddenException(this);
             Status = ReviewStatus.Hidden;
-            HiddenByAdmin = admin ?? throw new DomainArgumentNullException(nameof(admin));
+            HiddenByAdmin = admin;
             HiddenAt = DateTime.UtcNow;
         }
 
