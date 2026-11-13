@@ -30,11 +30,8 @@ namespace MovieRatingsService.Application.Service
 
         public async Task<UserModel?> CreateUserAsync(CreateUserModel model, CancellationToken cancellationToken = default)
         {
-            // value object проверяет строку (пусто, длина) и бросает исключение
+            //value object проверяет строку (пусто, длина) и бросает исключение
             var username = new Username(model.Username);
-
-            //if (await repository.GetByUsernameAsync(username.Value, cancellationToken) is not null)
-            //    throw new ConflictException($"Пользователь '{username.Value}' уже существует.");
 
             var created = await repository.AddAsync(new User(username), cancellationToken);
             return created is null ? null : mapper.Map<UserModel>(created);
